@@ -27,12 +27,12 @@ export default function Skills() {
         </div>
         <div className="grid gap-6">
           {skills.map((skill, index) => (
-            <div key={index}>
-              <div className="flex justify-between mb-2">
+            <div key={index} className="text-center">
+              <div className="flex justify-between mb-2 max-w-lg mx-auto">
                 <span className="font-medium">{skill.name}</span>
                 <span className="text-muted-foreground">{skill.level}%</span>
               </div>
-              <Progress value={skill.level} className="h-2" />
+              <Progress value={skill.level} className="h-2 max-w-lg mx-auto" />
             </div>
           ))}
         </div>

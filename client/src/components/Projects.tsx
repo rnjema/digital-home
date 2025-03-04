@@ -30,7 +30,7 @@ export default function Projects() {
             Showcasing my work and technical implementations.
           </p>
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 place-items-center">
           {projects.map((project, index) => (
             <Card key={index}>
               <CardHeader>
@@ -38,14 +38,14 @@ export default function Projects() {
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-4 justify-center">
                   {project.tags.map((tag, i) => (
                     <span key={i} className="px-2 py-1 bg-primary/10 rounded-md text-sm">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 justify-center">
                   <Button size="sm" variant="outline" asChild>
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <FiGithub className="mr-2" /> Code

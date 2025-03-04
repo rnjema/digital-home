@@ -54,8 +54,10 @@ export default function Contact() {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl font-bold tracking-tight mb-8">Get in Touch</h2>
-        <div className="max-w-md">
+        <div className="max-w-md mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold tracking-tight">Get in Touch</h2>
+          </div>
           <Form {...form}>
             <form onSubmit={form.handleSubmit((data) => mutation.mutate(data))} className="space-y-6">
               <FormField
@@ -97,9 +99,11 @@ export default function Contact() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" disabled={mutation.isPending}>
-                {mutation.isPending ? "Sending..." : "Send Message"}
-              </Button>
+              <div className="flex justify-center">
+                <Button type="submit" disabled={mutation.isPending}>
+                  {mutation.isPending ? "Sending..." : "Send Message"}
+                </Button>
+              </div>
             </form>
           </Form>
         </div>

@@ -62,10 +62,8 @@ export default function Hero() {
         <h1 className="bg-gradient-to-r from-primary to-primary/50 bg-clip-text text-5xl font-bold tracking-tight text-transparent sm:text-6xl md:text-7xl">
           Ramsey Njema
         </h1>
-        <p className="mt-6 max-w-2xl text-xl text-muted-foreground">
-          Computer Science graduate from the University of Malawi, passionate about building
-          innovative solutions and creating impactful technology. Specializing in software
-          engineering and data structures.
+        <p className="mt-6 max-w-3xl text-xl text-muted-foreground leading-relaxed">
+          A self-driven and budding academic researcher who has been actively involved in developing high-impact digital initiatives using the DHIS2 platform. He has significantly contributed to developing and operationalizing iCHIS, a digitalized nationwide community health services solution, and NAMIS, the national agricultural management information system. In addition to his passion for digital transformation initiatives, Ramsey's research interests lie at the intersection of digital security, AI, and edge computing. Currently, he serves as a staff associate in the Department of Computing at the University of Malawi – where he has been actively involved in teaching, outreach activities, and software development. He firmly believes in community-driven digital transformation, as evidenced by his engagement with Zindi in his role as country ambassador, where he seeks to democratize the knowledge of AI. In addition, Ramsey is an avid enthusiast of emerging technologies such as blockchain, IoT, quantum computing, and GenAI, just to name a few.
         </p>
         <div className="mt-8">
           <Button size="lg" variant="outline" asChild>
