@@ -29,6 +29,15 @@ export default function NavBar() {
             <a href="#projects" className="text-sm font-medium transition-colors hover:text-primary">
               Projects
             </a>
+            <a href="#research" className="text-sm font-medium transition-colors hover:text-primary">
+              Research
+            </a>
+            <a href="#blog" className="text-sm font-medium transition-colors hover:text-primary">
+              Blog
+            </a>
+            <a href="#community" className="text-sm font-medium transition-colors hover:text-primary">
+              Community
+            </a>
           </nav>
           <ThemeToggle />
         </div>

@@ -4,6 +4,9 @@ import ProfessionalExperience from "@/components/ProfessionalExperience";
 import AcademicExperience from "@/components/AcademicExperience";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import Research from "@/components/Research";
+import Blog from "@/components/Blog";
+import CommunityEngagement from "@/components/CommunityEngagement";
 import Contact from "@/components/Contact";
 import { motion } from "framer-motion";
 
@@ -20,6 +23,9 @@ export default function Home() {
       <AcademicExperience />
       <Skills />
       <Projects />
+      <Research />
+      <Blog />
+      <CommunityEngagement />
       <Contact />
     </motion.main>
   );
