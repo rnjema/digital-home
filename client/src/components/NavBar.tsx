@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import ThemeToggle from "./ThemeToggle";
 import { Button } from "./ui/button";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
 export default function NavBar() {
   return (
@@ -8,6 +9,9 @@ export default function NavBar() {
       <div className="container flex h-14 items-center">
         <Link href="/">
           <a className="mr-6 flex items-center space-x-2">
+            <Avatar className="h-8 w-8">
+              <AvatarImage src="/avatar.jpg" alt="Ramsey Njema" />
+            </Avatar>
             <span className="font-bold">Ramsey Njema</span>
           </a>
         </Link>
