@@ -3,11 +3,11 @@ import { Progress } from "./ui/progress";
 
 export default function Skills() {
   const skills = [
-    { name: "JavaScript/TypeScript", level: 90 },
-    { name: "React", level: 85 },
-    { name: "Node.js", level: 80 },
-    { name: "Python", level: 75 },
-    { name: "SQL", level: 70 }
+    { name: "Mobile & Web Development", level: 90, technologies: "Flutter, JavaScript, ReactJS, PHP Laravel" },
+    { name: "Databases", level: 85, technologies: "SQL, NoSQL" },
+    { name: "Data Science & Machine Learning", level: 80, technologies: "Python, PyTorch" },
+    { name: "Network Systems Administration", level: 75, technologies: "UNIX" },
+    { name: "Network Programming", level: 70, technologies: "Python, C" }
   ];
 
   return (
@@ -33,6 +33,9 @@ export default function Skills() {
                 <span className="text-muted-foreground">{skill.level}%</span>
               </div>
               <Progress value={skill.level} className="h-2 max-w-lg mx-auto" />
+              <p className="text-sm text-muted-foreground mt-2">
+                {skill.technologies}
+              </p>
             </div>
           ))}
         </div>

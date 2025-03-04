@@ -5,12 +5,15 @@ export default function Education() {
   const education = [
     {
       school: "University of Malawi",
-      degree: "Bachelor of Science in Computer Science",
-      year: "2018 - 2022",
+      degree: "Bachelor of Science in Computer Network Engineering",
+      year: "2017 - 2022",
       description: 
         "Graduated with distinction, specializing in software engineering, data structures, " +
         "and algorithm design. Developed strong problem-solving skills through coursework " +
-        "in database systems, web technologies, and artificial intelligence."
+        "in database systems, web technologies, and artificial intelligence.",
+      awards: [
+        "Dean's List Award (2x) for outstanding academic performance"
+      ]
     }
   ];
 
@@ -37,8 +40,18 @@ export default function Education() {
                 <p className="text-primary font-medium">{edu.degree}</p>
                 <p className="text-sm text-muted-foreground">{edu.year}</p>
               </CardHeader>
-              <CardContent className="mt-4">
+              <CardContent className="mt-4 space-y-4">
                 <p className="text-muted-foreground">{edu.description}</p>
+                {edu.awards && (
+                  <div className="pt-2">
+                    <p className="font-medium text-primary">Awards & Achievements</p>
+                    <ul className="list-disc list-inside text-muted-foreground pl-4 mt-2">
+                      {edu.awards.map((award, i) => (
+                        <li key={i}>{award}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}

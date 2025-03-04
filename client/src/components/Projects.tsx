@@ -6,13 +6,13 @@ import { FiGithub, FiExternalLink } from "react-icons/fi";
 export default function Projects() {
   const projects = [
     {
-      title: "Project One",
-      description: "A full-stack web application built with React and Node.js",
-      tags: ["React", "Node.js", "TypeScript"],
-      github: "#",
+      title: "Smart Home Automation System",
+      description: "An IoT-based smart home automation system providing a platform for intelligent and efficient consumption of domestic utilities. Developed as part of a 2-person team for BSc final year project.",
+      details: "Led the development of a Flutter mobile app-based user interface and integrated Firebase backend with Arduino microcontroller hosting different sensors.",
+      tags: ["Flutter", "Firebase", "IoT", "Arduino", "Mobile Development"],
+      github: "https://github.com/rnjema/smart-home-automation-project",
       demo: "#"
-    },
-    // Add more projects as needed
+    }
   ];
 
   return (
@@ -38,6 +38,7 @@ export default function Projects() {
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>
               <CardContent>
+                <p className="mb-4 text-sm text-muted-foreground">{project.details}</p>
                 <div className="flex flex-wrap gap-2 mb-4 justify-center">
                   {project.tags.map((tag, i) => (
                     <span key={i} className="px-2 py-1 bg-primary/10 rounded-md text-sm">
