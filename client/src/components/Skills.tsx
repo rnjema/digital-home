@@ -17,9 +17,15 @@ export default function Skills() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
+        className="space-y-8 max-w-4xl mx-auto"
       >
-        <h2 className="text-3xl font-bold tracking-tight mb-8">Skills</h2>
-        <div className="grid gap-6 max-w-2xl">
+        <div className="space-y-4 text-center">
+          <h2 className="text-3xl font-bold tracking-tight">Skills</h2>
+          <p className="text-muted-foreground">
+            Technical proficiencies and expertise.
+          </p>
+        </div>
+        <div className="grid gap-6">
           {skills.map((skill, index) => (
             <div key={index}>
               <div className="flex justify-between mb-2">

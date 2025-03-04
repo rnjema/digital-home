@@ -22,9 +22,15 @@ export default function Projects() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
+        className="space-y-8 max-w-4xl mx-auto"
       >
-        <h2 className="text-3xl font-bold tracking-tight mb-8">Projects</h2>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="space-y-4 text-center">
+          <h2 className="text-3xl font-bold tracking-tight">Projects</h2>
+          <p className="text-muted-foreground">
+            Showcasing my work and technical implementations.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
           {projects.map((project, index) => (
             <Card key={index}>
               <CardHeader>

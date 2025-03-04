@@ -21,9 +21,9 @@ export default function Education() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="space-y-8"
+        className="space-y-8 max-w-4xl mx-auto"
       >
-        <div className="space-y-4">
+        <div className="space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tight">Education</h2>
           <p className="text-muted-foreground">
             My academic journey in computer science and software engineering.
