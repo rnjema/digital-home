@@ -4,20 +4,21 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 export default function AcademicExperience() {
   const experiences = [
     {
-      role: "Teaching Assistant",
+      role: "Staff Associate/Assistant Lecturer",
       institution: "University of Malawi",
-      period: "January 2022 - December 2022",
+      period: "June 2023 - Present",
       description: 
-        "Assisted in teaching undergraduate computer science courses, including Data Structures " +
-        "and Algorithms. Conducted tutorial sessions and provided one-on-one support to students."
+        "Teach and prepare assessments for undergraduate modules in Computer Networking and other " +
+        "modules as assigned. Supervise undergraduate student projects and contribute to " +
+        "departmental academic activities."
     },
     {
-      role: "Research Assistant",
+      role: "Part-Time Instructor",
       institution: "University of Malawi",
-      period: "September 2021 - December 2021",
+      period: "August 2022 - May 2023",
       description: 
-        "Contributed to research projects in machine learning and data analysis. " +
-        "Collaborated with faculty members on publications and presentations."
+        "Assisted in teaching modules such as machine learning, cryptography, and network programming. " +
+        "Provided guidance and support to undergraduate students in their coursework and projects."
     }
   ];
 

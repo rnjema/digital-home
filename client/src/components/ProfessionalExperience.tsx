@@ -4,12 +4,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 export default function ProfessionalExperience() {
   const experiences = [
     {
-      role: "Software Engineering Intern",
-      company: "Malawi Revenue Authority",
-      period: "June 2021 - August 2021",
+      role: "Software Developer/Implementer (HISP UNIMA)",
+      company: "University of Malawi",
+      period: "May 2022 - Present",
       description: 
-        "Developed and maintained web applications using modern JavaScript frameworks " +
-        "and contributed to the optimization of database queries for improved performance."
+        "Support the development and implementation of a nationwide Communication Health Information System " +
+        "aimed at integrated digitally-supported service delivery by community health workers. " +
+        "Led the digitalization of a nationwide ITN mass campaign – a Malaria prevention initiative."
+    },
+    {
+      role: "Medical Informatics Intern",
+      company: "Partners in Health / Abwenzi Pa Za Umoyo",
+      period: "August 2020 - October 2020",
+      description: 
+        "Worked closely with the M&E team in ensuring timely, complete, and high-quality COVID reporting, " +
+        "which included fieldwork. Wrote and designed scripts for automated data retrieval from OpenMRS and " +
+        "DHIS2 that significantly sped up custom report generation."
     }
   ];
 
