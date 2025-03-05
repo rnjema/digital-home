@@ -93,6 +93,7 @@ export default function Hero() {
         </div>
         <div className="mt-8">
           <Button size="lg" variant="outline" asChild>
+            <a
             href="/Ramsey-Njema-Resume.pdf"
               download
               className="flex items-center gap-2"
