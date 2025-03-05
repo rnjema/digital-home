@@ -2,6 +2,32 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { useAnimation, useInView } from "framer-motion";
+import { useRef } from "react";
+
+
+const fadeInUpVariant = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1.0],
+    },
+  },
+};
+
+const staggerChildrenVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
 
 export default function Projects() {
   const projects = [
@@ -15,53 +41,105 @@ export default function Projects() {
     }
   ];
 
+  const ref = useRef(null);
+  const controls = useAnimation();
+  const isInView = useInView(ref, { once: true });
+
+  isInView && controls.start("visible");
+
+
   return (
-    <section id="projects" className="container py-12 md:py-20">
+    <section id="projects" className="mx-auto max-w-5xl px-4 py-12 md:px-8 md:py-20">
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="space-y-8 max-w-4xl mx-auto"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { 
+            opacity: 1,
+            transition: { 
+              staggerChildren: 0.3 
+            } 
+          }
+        }}
       >
-        <div className="space-y-4 text-center">
-          <h2 className="text-3xl font-bold tracking-tight">Projects</h2>
-          <p className="text-muted-foreground">
-            Showcasing my work and technical implementations.
-          </p>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2 place-items-center">
+        <motion.h2 
+          className="mb-6 text-3xl font-bold md:mb-12 md:text-4xl"
+          variants={fadeInUpVariant}
+        >
+          Projects
+        </motion.h2>
+
+        <motion.div 
+          className="grid gap-8 md:grid-cols-2"
+          ref={ref}
+          initial="hidden"
+          animate={controls}
+          variants={staggerChildrenVariants}
+        >
           {projects.map((project, index) => (
-            <Card key={index}>
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4 text-sm text-muted-foreground">{project.details}</p>
-                <div className="flex flex-wrap gap-2 mb-4 justify-center">
-                  {project.tags.map((tag, i) => (
-                    <span key={i} className="px-2 py-1 bg-primary/10 rounded-md text-sm">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-2 justify-center">
-                  <Button size="sm" variant="outline" asChild>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <FiGithub className="mr-2" /> Code
-                    </a>
-                  </Button>
-                  <Button size="sm" asChild>
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <FiExternalLink className="mr-2" /> Demo
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+            <motion.div
+              key={index}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { 
+                  opacity: 1, 
+                  y: 0,
+                  transition: {
+                    duration: 0.6,
+                    ease: [0.25, 0.1, 0.25, 1.0]
+                  }
+                }
+              }}
+              whileHover={{ 
+                y: -10,
+                transition: { duration: 0.3 }
+              }}
+            >
+              <Card className="overflow-hidden h-full border-2 border-transparent hover:border-primary/20 transition-all duration-300">
+                <CardHeader>
+                  <CardTitle>{project.title}</CardTitle>
+                  <CardDescription>{project.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="mb-4 text-sm">{project.details}</p>
+                  <div className="mb-4 flex flex-wrap gap-2">
+                    {project.tags.map((tag, tagIndex) => (
+                      <motion.span
+                        key={tagIndex}
+                        className="rounded-full bg-primary/10 px-3 py-1 text-xs text-primary"
+                        whileHover={{ 
+                          scale: 1.05, 
+                          backgroundColor: "hsl(var(--primary)/0.2)" 
+                        }}
+                      >
+                        {tag}
+                      </motion.span>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                          <FiGithub className="h-4 w-4" />
+                          Source
+                        </a>
+                      </Button>
+                    </motion.div>
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                          <FiExternalLink className="h-4 w-4" />
+                          Demo
+                        </a>
+                      </Button>
+                    </motion.div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );

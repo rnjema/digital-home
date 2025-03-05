@@ -93,15 +93,32 @@ export default function Hero() {
         </div>
         <div className="mt-8">
           <Button size="lg" variant="outline" asChild>
-            <a
-              href="/Ramsey-Njema-Resume.pdf"
+            href="/Ramsey-Njema-Resume.pdf"
               download
               className="flex items-center gap-2"
             >
-              <FiDownload className="h-5 w-5" />
+              <motion.div
+                initial={{ rotate: 0 }}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: "loop", ease: "linear", repeatDelay: 5 }}
+              >
+                <FiDownload className="h-5 w-5" />
+              </motion.div>
               Download CV
             </a>
           </Button>
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ 
+              duration: 0.8,
+              delay: 1.2,
+              ease: [0, 0.71, 0.2, 1.01] 
+            }}
+            className="absolute -bottom-12 -left-12 h-24 w-24 rounded-full bg-primary/30 blur-2xl md:h-32 md:w-32"
+            aria-hidden="true"
+          />
         </div>
       </motion.div>
     </section>

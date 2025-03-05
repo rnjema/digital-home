@@ -9,6 +9,8 @@ import Blog from "@/components/Blog";
 import CommunityEngagement from "@/components/CommunityEngagement";
 import Contact from "@/components/Contact";
 import { motion } from "framer-motion";
+import { ScrollProgressBar } from "@/components/ui/ScrollProgressBar";
+import { FloatingParticles } from "@/components/FloatingParticles";
 
 export default function Home() {
   return (
@@ -16,7 +18,10 @@ export default function Home() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
+      className="relative"
     >
+      <ScrollProgressBar />
+      <FloatingParticles />
       <Hero />
       <Education />
       <ProfessionalExperience />

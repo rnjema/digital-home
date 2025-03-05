@@ -32,26 +32,56 @@ export default function ProfessionalExperience() {
         transition={{ duration: 0.5 }}
         className="space-y-8 max-w-4xl mx-auto"
       >
-        <div className="space-y-4 text-center">
-          <h2 className="text-3xl font-bold tracking-tight">Professional Experience</h2>
-          <p className="text-muted-foreground">
-            My journey in professional software development.
-          </p>
-        </div>
-        <div className="grid gap-6">
+        <motion.h2 
+          className="text-3xl font-bold tracking-tight"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Professional Experience
+        </motion.h2>
+        <p className="text-muted-foreground">
+          My journey in professional software development.
+        </p>
+        <motion.div 
+          className="grid gap-6"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { 
+              opacity: 1, 
+              y: 0, 
+              transition: { duration: 0.6, staggerChildren: 0.2 } 
+            }
+          }}
+        >
           {experiences.map((exp, index) => (
-            <Card key={index} className="overflow-hidden border-2">
-              <CardHeader className="space-y-1 bg-muted/50">
-                <CardTitle className="text-2xl">{exp.role}</CardTitle>
-                <p className="text-primary font-medium">{exp.company}</p>
-                <p className="text-sm text-muted-foreground">{exp.period}</p>
-              </CardHeader>
-              <CardContent className="mt-4">
-                <p className="text-muted-foreground">{exp.description}</p>
-              </CardContent>
-            </Card>
+            <motion.div
+              key={index}
+              variants={{
+                hidden: { opacity: 0, x: -30 },
+                visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
+              }}
+              whileHover={{ 
+                scale: 1.02, 
+                transition: { duration: 0.2 } 
+              }}
+              className="overflow-hidden border-2"
+            >
+              <Card >
+                <CardHeader className="space-y-1 bg-muted/50">
+                  <CardTitle className="text-2xl">{exp.role}</CardTitle>
+                  <p className="text-primary font-medium">{exp.company}</p>
+                  <p className="text-sm text-muted-foreground">{exp.period}</p>
+                </CardHeader>
+                <CardContent className="mt-4">
+                  <p className="text-muted-foreground">{exp.description}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );
