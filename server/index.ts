@@ -56,14 +56,28 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on port 5000
+  // Default port to listen on is 5000
+  // Or uses port defined in environment variable configuration
   // this serves both the API and the client
-  const port = 5000;
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
+  const port = process.env.PORT || 60280;  
+  console.log("port", port);
+  
+  try {
+    server.listen(
+      {
+        port,
+        host: "127.0.0.1",
+        reusePort: true,
+      },
+      () => {
+        log(`serving on port ${port}`);
+      }
+    );
+  } catch (err) {
+    console.error("Error in listen call:", err);
+  }
+  
+  server.on("error", (err) => {
+    console.error("Server error occurred:", err);
   });
 })();
