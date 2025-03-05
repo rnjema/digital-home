@@ -1,6 +1,10 @@
 node_modules
+attached_assets
 dist
 .DS_Store
 server/public
 vite.config.ts.*
 *.tar.gz
+.gitignore
+.replit
+.env
