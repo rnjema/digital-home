@@ -8,9 +8,8 @@ export default function Education() {
       degree: "Bachelor of Science in Computer Network Engineering",
       year: "2017 - 2022",
       description: 
-        "Graduated with distinction, specializing in software engineering, data structures, " +
-        "and algorithm design. Developed strong problem-solving skills through coursework " +
-        "in database systems, web technologies, and artificial intelligence.",
+        "Specializing in computer science, networking and electronics. Developed strong problem-solving skills through coursework " +
+        "in Internet applications development, systems and network adminstration and security, and artificial intelligence.",
       awards: [
         "Dean's List Award (2x) for outstanding academic performance"
       ]
