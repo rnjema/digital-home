@@ -13,7 +13,7 @@ export default function CommunityEngagement() {
       role: "Country Ambassador",
       organization: "Zindi Africa Malawi",
       period: "December 2024 - Present",
-      description: "Previously served as Community Ambassador from September 2022 to November 2024",
+      description: "Previously served as Community Ambassador from September 2022 to November 2024. Currently serving as Country Ambassador for Malawi.",
       type: "Leadership"
     },
     {
