@@ -37,7 +37,7 @@ export default function Projects() {
       details: "Led the development of a Flutter mobile app-based user interface and integrated Firebase backend with Arduino microcontroller hosting different sensors.",
       tags: ["Flutter", "Firebase", "IoT", "Arduino", "Mobile Development"],
       github: "https://github.com/rnjema/smart-home-automation-project",
-      demo: "#"
+      demo: undefined
     }
   ];
 
@@ -127,12 +127,12 @@ export default function Projects() {
                       </Button>
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                      <Button variant="outline" size="sm" asChild>
+                      {project.demo && (<Button variant="outline" size="sm" asChild>
                         <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                           <FiExternalLink className="h-4 w-4" />
                           Demo
                         </a>
-                      </Button>
+                      </Button>)}
                     </motion.div>
                   </div>
                 </CardContent>
