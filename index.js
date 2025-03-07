@@ -169,6 +169,7 @@ import { fileURLToPath } from "url";
 var __filename = fileURLToPath(import.meta.url);
 var __dirname = dirname(__filename);
 var vite_config_default = defineConfig({
+  base: "/digital-home/",
   plugins: [
     react(),
     runtimeErrorOverlay(),
@@ -202,7 +203,7 @@ function log(message, source = "express") {
     hour: "numeric",
     minute: "2-digit",
     second: "2-digit",
-    hour12: true
+    hour12: false
   });
   console.log(`${formattedTime} [${source}] ${message}`);
 }
@@ -262,6 +263,8 @@ function serveStatic(app2) {
 }
 
 // server/index.ts
+import dotenv from "dotenv";
+dotenv.config();
 var app = express2();
 app.use(express2.json());
 app.use(express2.urlencoded({ extended: false }));
@@ -302,14 +305,14 @@ app.use((req, res, next) => {
   } else {
     serveStatic(app);
   }
-  const port = process.env.PORT || 60280;
+  const port = process.env.SERVER_PORT || 5e3;
   console.log("port", port);
   try {
     server.listen(
       {
         port,
-        host: "127.0.0.1",
-        reusePort: true
+        host: "0.0.0.0",
+        reusePort: false
       },
       () => {
         log(`serving on port ${port}`);
