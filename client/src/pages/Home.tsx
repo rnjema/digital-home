@@ -28,10 +28,10 @@ export default function Home() {
       <AcademicExperience />
       <Skills />
       <Projects />
-      <Research />
-      <Blog />
+      {/* <Research /> */}
+      {/* <Blog /> */}
       <CommunityEngagement />
-      <Contact />
+      {/* <Contact /> */}
     </motion.main>
   );
 }
