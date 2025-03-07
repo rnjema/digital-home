@@ -8,9 +8,7 @@ export default function AcademicExperience() {
       institution: "University of Malawi",
       period: "June 2023 - Present",
       description: 
-        "Teach and prepare assessments for undergraduate modules in Computer Networking and other " +
-        "modules as assigned. Supervise undergraduate student projects and contribute to " +
-        "departmental academic activities."
+        "Currently teaching - Introduction to Cryptography, Network Programming and Applications Development and Machine Learning"
     },
     {
       role: "Part-Time Instructor",
@@ -23,7 +21,7 @@ export default function AcademicExperience() {
   ];
 
   return (
-    <section id="academic" className="container py-12 md:py-20 bg-muted/50">
+    <section id="academic" className="container py-12 md:py-20">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -46,7 +44,7 @@ export default function AcademicExperience() {
                 <p className="text-sm text-muted-foreground">{exp.period}</p>
               </CardHeader>
               <CardContent className="mt-4">
-                <p className="text-muted-foreground">{exp.description}</p>
+                <p className="text-muted-foreground" dangerouslySetInnerHTML={{__html : exp.description }} />
               </CardContent>
             </Card>
           ))}
