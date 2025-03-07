@@ -29,8 +29,8 @@ export default function Hero() {
         <div className="flex items-center gap-4 mb-8">
           <Button variant="ghost" size="icon" asChild>
             <a 
-              href="https://github.com/RamseyNjema" 
-              target="_blank" 
+              href="https://github.com/rnjema"
+              target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary"
             >
@@ -40,7 +40,7 @@ export default function Hero() {
           </Button>
           <Button variant="ghost" size="icon" asChild>
             <a 
-              href="https://linkedin.com/in/ramsey-njema" 
+              href="https://linkedin.com/in/rnjema" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-primary"
@@ -51,22 +51,13 @@ export default function Hero() {
           </Button>
           <Button variant="ghost" size="icon" asChild>
             <a 
-              href="https://twitter.com/RamseyNjema" 
+              href="https://twitter.com/RamseyJrCxdes" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-primary"
             >
               <SiX className="h-4 w-4" />
               <span className="sr-only">X (Twitter)</span>
-            </a>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <a 
-              href="mailto:ramseynjema@gmail.com"
-              className="hover:text-primary"
-            >
-              <FiMail className="h-5 w-5" />
-              <span className="sr-only">Email</span>
             </a>
           </Button>
         </div>
@@ -94,7 +85,7 @@ export default function Hero() {
         <div className="mt-8">
           <Button size="lg" variant="outline" asChild>
             <a
-            href="/Ramsey-Njema-Resume.pdf"
+            href="/ramsey-njema-resume.pdf"
               download
               className="flex items-center gap-2"
             >
